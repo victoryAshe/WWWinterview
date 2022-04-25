@@ -10,4 +10,8 @@
 
 # DS 구현
 전주에 하나의 자료구조를 정하고, 모임을 하면서 각자의 언어로 시간제한을 두어 라이브로 구현해보기.  
-시간제한을 넘으면 무조건 커밋을 하고, 나중에 부족한 점을 스스로 채웁니다.
+시간제한을 넘으면 무조건 커밋을 하고, 나중에 부족한 점을 스스로 채웁니다.  
+
+#Source  
+https://github.com/gyoogle/tech-interview-for-developer  
+https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/Network
