@@ -107,8 +107,28 @@ Rate = CongWin / RTT (byte/sec)
 @ Ashe  
 
 TCP는 3-way handshaking 과정을 통해 연결을 설정하고, 4-way handshaking을 통해 해제한다.
-### 3-way handshaking
-TCP의 접속 과정
+### **용어 설명**
+* Client: 연결 요청을 먼저 시도한 요청자
+* Server: 연결 요청을 받은 수신자
+
+### **3-way handshaking**
+* **개념**
+  * TCP 통신을 이용하여 데이터를 전송하기 위해 **네트워크 연결을 설정(*Connection Establish*)**하는 과정  
+  * 양쪽 모두 데이터를 전송할 준비가 되었다는 것을 보장하고, 실제로 데이터 전달을 시작하기 전에 상대쪽이 준비되었다는 것을 알 수 있도록 한다.  
+   -> TCP/IP 프로토콜을 이용해 통신하는 응용 프로그램이 데이터를 전송하기 전에, 먼저 정확한 전송을 보장하기 위해 상대방 컴퓨터와 사전에 세션을 수립하는 과정
+* **기본 매커니즘**
+  * **PAR**_ *Positive Acknowledgement with Re=transmission*: 을 통해 신뢰적 통신을 제공!  
+    -> Par을 사용하는 기기는 ack를 받을 때까지 데이터 유닛을 재전송 
+   ![images_averycode_post_cd53e336-a624-4f8a-b7e5-20fe62eb6648_image](https://user-images.githubusercontent.com/80302657/168985259-ac0f3aeb-30a5-4b5a-b4ae-f6e669205a46.png)
+
+  * 수신자가 데이터 유닛(:세그먼트)이 손상된 것을 확인하면(Error Detection에 사용되는 transport layer의 checksum 활용), 해당 세그먼트를 없애고 sender는 positive ack이 오지 않은 세그먼트를 다시 보내야 함  
+    -> 이 과정에서 클라이언트-서버 사이에 3개의 세그먼트가 교환되는 것을 확인할 수 있다: 3-way handshake
+* **작동 방식**
+  *  **SYN**_ *Synchronization*: 연결요청, 세션을 설정하는 데 사용되며 초기에 시퀀스 번호를 보냄
+  *  **ACK**_ *Acknowledgement*: 보낸 시퀀스 번호에 TCP 계층에서의 길이 or 양을 더한 것과 같은 값을 ACL에 포함해 전송
+    : 동기화 요청에 대한 답변: `Client의 Sequence Number+1`을 해 ACK로 돌려줌 
+    ![images_averycode_post_22a2bab1-c8dd-4559-88b2-62d03cbff927_기술면접-5](https://user-images.githubusercontent.com/80302657/168996770-aed55b06-89d9-4449-8b5d-3fb7077d5e5f.jpg)
+
 
 ---
 ## HTTP와 HTTPS의 차이와 그 구체적인 방식
