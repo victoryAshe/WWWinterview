@@ -1,5 +1,9 @@
 # 1stMeeting
-
+* [TCP와 UDP의 차이](https://github.com/victoryAshe/WWWinterview/blob/main/CS_Interview/Network/1stMeeting.md#tcp%EC%99%80-udp%EC%9D%98-%EC%B0%A8%EC%9D%B4)
+* [TCP에서 흐름제어와 혼잡제어의 차이](https://github.com/victoryAshe/WWWinterview/blob/main/CS_Interview/Network/1stMeeting.md#tcp%EC%97%90%EC%84%9C-%ED%9D%90%EB%A6%84%EC%A0%9C%EC%96%B4%EC%99%80-%ED%98%BC%EC%9E%A1%EC%A0%9C%EC%96%B4%EC%9D%98-%EC%B0%A8%EC%9D%B4)
+* [TCP에서 3-way-handshaking의 방식](https://github.com/victoryAshe/WWWinterview/blob/main/CS_Interview/Network/1stMeeting.md#tcp%EC%97%90%EC%84%9C-3-way-handshake%EC%9D%98-%EB%B0%A9%EC%8B%9D)
+* [HTTP와 HTTPS의 차이와 그 구체적인 방식](https://github.com/victoryAshe/WWWinterview/blob/main/CS_Interview/Network/1stMeeting.md#http%EC%99%80-https%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%99%80-%EA%B7%B8-%EA%B5%AC%EC%B2%B4%EC%A0%81%EC%9D%B8-%EB%B0%A9%EC%8B%9D)
+---
 ## TCP와 UDP의 차이
 
 @ 또로리
@@ -34,6 +38,7 @@ UDP : 속도
 TCP : 파일 전송  
 UDP : 스트리밍과 같이 RTP가 필요한 실시간 커뮤니케이션 서비스
 
+---
 ## TCP에서 흐름제어와 혼잡제어의 차이
 
 @ 흐느
@@ -97,11 +102,15 @@ Rate = CongWin / RTT (byte/sec)
 
 1. 네트워크 강의, kocw 이석복 교수님
 2. https://jwprogramming.tistory.com/36 [개발자를 꿈꾸는 프로그래머]
+---
+## TCP에서 3-way-handshaking의 방식
+@ Ashe  
 
-## TCP에서 3-way-handshake의 방식
+TCP는 3-way handshaking 과정을 통해 연결을 설정하고, 4-way handshaking을 통해 해제한다.
+### 3-way handshaking
+TCP의 접속 과정
 
-@ Ashe
-
+---
 ## HTTP와 HTTPS의 차이와 그 구체적인 방식
 
 @ 보라
