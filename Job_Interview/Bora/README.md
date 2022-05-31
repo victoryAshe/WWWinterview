@@ -1,6 +1,11 @@
 # springboot 백엔드 직무 질문
 https://junjangsee.github.io/2019/05/15/interview/interview/
 
+## 5/31 직무질문  
+**REST API란 무엇인가?**
+https://beenii.tistory.com/134   
+   
+   
 ## 5/17 직무질문
 **객제치향이란 무엇인가?**   
 OOP는 현실 세계를 프로그래밍으로 옮겨와 현실 세계의 사물들을 객체로 보고, 그 객체로부터 개발하고자 하는 특징과 기능을 뽑아와 프로그래밍하는 기법입니다. OOP로 코드를 작성하면 재사용성과 변형가능성을 높일 수 있습니다.
