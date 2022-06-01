@@ -4,9 +4,7 @@
 * [TCP에서 3-way-handshaking의 방식](https://github.com/victoryAshe/WWWinterview/blob/main/CS_Interview/Network/1stMeeting.md#tcp%EC%97%90%EC%84%9C-3-way-handshake%EC%9D%98-%EB%B0%A9%EC%8B%9D)
 * [HTTP와 HTTPS의 차이와 그 구체적인 방식](https://github.com/victoryAshe/WWWinterview/blob/main/CS_Interview/Network/1stMeeting.md#http%EC%99%80-https%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%99%80-%EA%B7%B8-%EA%B5%AC%EC%B2%B4%EC%A0%81%EC%9D%B8-%EB%B0%A9%EC%8B%9D)
 ---
-## TCP와 UDP의 차이
-
-@ 또로리
+## TCP와 UDP의 차이   *@ 또로리*
 
 ### 답변 내용
 
@@ -39,9 +37,7 @@ TCP : 파일 전송
 UDP : 스트리밍과 같이 RTP가 필요한 실시간 커뮤니케이션 서비스
 
 ---
-## TCP에서 흐름제어와 혼잡제어의 차이
-
-@ 흐느
+## TCP에서 흐름제어와 혼잡제어의 차이   *@ 흐느*
 
 ### Flow Control 흐름 제어
 
@@ -103,8 +99,7 @@ Rate = CongWin / RTT (byte/sec)
 1. 네트워크 강의, kocw 이석복 교수님
 2. https://jwprogramming.tistory.com/36 [개발자를 꿈꾸는 프로그래머]
 ---
-## TCP에서 3-way-handshaking의 방식
-@ Ashe  
+## TCP에서 3-way-handshaking의 방식   *@ Ashe*  
 
 TCP는 3-way handshaking 과정을 통해 연결을 설정하고, 4-way handshaking을 통해 해제한다.
 ### **용어 설명**
@@ -113,7 +108,7 @@ TCP는 3-way handshaking 과정을 통해 연결을 설정하고, 4-way handshak
 
 ### **3-way handshaking**
 * **개념**
-  * TCP 통신을 이용하여 데이터를 전송하기 위해 **네트워크 연결을 설정(*Connection Establish*)**하는 과정  
+  * TCP 통신을 이용하여 데이터를 전송하기 위해 **네트워크 연결을 설정(Connection Establish)**하는 과정  
   * 양쪽 모두 데이터를 전송할 준비가 되었다는 것을 보장하고, 실제로 데이터 전달을 시작하기 전에 상대쪽이 준비되었다는 것을 알 수 있도록 한다.  
    -> TCP/IP 프로토콜을 이용해 통신하는 응용 프로그램이 데이터를 전송하기 전에, 먼저 정확한 전송을 보장하기 위해 상대방 컴퓨터와 사전에 세션을 수립하는 과정
 * **기본 매커니즘**
@@ -126,14 +121,16 @@ TCP는 3-way handshaking 과정을 통해 연결을 설정하고, 4-way handshak
 * **작동 방식**
   *  **SYN**_ *Synchronization*: 연결요청, 세션을 설정하는 데 사용되며 초기에 시퀀스 번호를 보냄
   *  **ACK**_ *Acknowledgement*: 보낸 시퀀스 번호에 TCP 계층에서의 길이 or 양을 더한 것과 같은 값을 ACL에 포함해 전송
-    : 동기화 요청에 대한 답변: `Client의 Sequence Number+1`을 해 ACK로 돌려줌 
-    ![images_averycode_post_22a2bab1-c8dd-4559-88b2-62d03cbff927_기술면접-5](https://user-images.githubusercontent.com/80302657/168996770-aed55b06-89d9-4449-8b5d-3fb7077d5e5f.jpg)
+    : 동기화 요청에 대한 답변: `Client의 Sequence Number+1`을 해 ACK로 돌려줌  
+    
+    ![image](https://user-images.githubusercontent.com/80302657/171321066-a7747c0c-3931-486d-89ab-39bd8b014d8a.png)
 
-
+### 출처
+1. [averycode.log](https://velog.io/@averycode/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-TCPUDP%EC%99%80-3-Way-Handshake4-Way-Handshake)
+2. 컴퓨터 네트워킹: 하향식 접근 제 7판, 퍼스트북
+  
 ---
-## HTTP와 HTTPS의 차이와 그 구체적인 방식
-
-@ 보라
+## HTTP와 HTTPS의 차이와 그 구체적인 방식   *@ 보라*
 
 ### 답변한 내용
 
