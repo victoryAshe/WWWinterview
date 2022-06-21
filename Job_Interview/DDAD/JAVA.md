@@ -43,7 +43,7 @@
 > - [http://huhghiza.tistory.com/7](http://huhghiza.tistory.com/7)
 
 ### java의 접근 제어자의 종류와 특징
-<img src="./images/access-controller.png" width="70%" height="70%">
+<img src="https://github.com/WeareSoft/tech-interview/blob/master/contents/images/access-controller.png" width="70%" height="70%">
 
 > :arrow_double_up:[Top](#7-java)    :leftwards_arrow_with_hook:[Back](https://github.com/WeareSoft/tech-interview#7-java)    :information_source:[Home](https://github.com/WeareSoft/tech-interview#tech-interview)
 
