@@ -1,7 +1,7 @@
 # 4th Meeting
-* [버블 정렬]
-* [퀵 정렬]
-* [삽입 정렬]
+* [삽입 정렬](https://github.com/victoryAshe/WWWinterview/blob/main/CS_Interview/Sort/4thMeeting.md#%EC%82%BD%EC%9E%85-%EC%A0%95%EB%A0%AC----%EB%98%90%EB%A1%9C%EB%A6%AC)
+* [버블 정렬](https://github.com/victoryAshe/WWWinterview/blob/main/CS_Interview/Sort/4thMeeting.md#%EB%B2%84%EB%B8%94-%EC%A0%95%EB%A0%AC----%ED%9D%90%EB%8A%90)
+* [퀵 정렬](https://github.com/victoryAshe/WWWinterview/blob/main/CS_Interview/Sort/4thMeeting.md#%ED%80%B5-%EC%A0%95%EB%A0%AC--ashe)
 ---
 ## 삽입 정렬   *@ 또로리*
 앞에서부터 차례대로 정렬되어있는 부분집합의 요소들과 하나씩 비교하며<br>
