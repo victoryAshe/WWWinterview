@@ -71,3 +71,5 @@ setter 메소드를 이용하여, 이러한 구현체를 동적으로 지정할�
 결합도를 낮춘다.
 
 - 관련 코드 구현 : https://github.com/HanaHww2/head-first-design-pattern/tree/main/src/me/study/ch1 (출처: 헤드 퍼스트 디자인 패턴)
+
+#### 과거 작성한 코드에서 스트래티지 패턴을 적용해서 수정할 부분...
