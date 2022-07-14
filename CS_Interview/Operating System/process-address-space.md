@@ -4,8 +4,8 @@
 - 프로세스는 대해 운영체제가 자원을 할당하는 단위로 볼 수 있다.
 - 프로세스에게 메모리를 할당하고 이를 관리하기 위해 메모리 공간을 특정한 구조로 관리하게 되는데 이를 가리켜 프로세스 주소 공간이라고 부른다.
 
-![](images_hanah/memory-address-space.png)
-![](images_hanah/memory-address-space2.png)
+<img src='images_hanah/memory-address-space.png' style="display:inline-block;width:30rem;">
+<img src='images_hanah/memory-address-space2.png' style="display:inline-block; width:30rem;">
 
 ### Text (Code) 영역:
 - 프로그램이 실행될 수 있도록 CPU가 해석 가능한 기계어 코드가 저장되어 있는 공간으로, 프로그램이 수정되면 안 되므로 ReadOnly 상태로 저장 되어있다.
@@ -30,11 +30,12 @@
 
 
 ### 멀티 스레드의 경우
-![](images_hanah/single-multi-address-space.png)
-- 하난의 프로세스 내에 존재하는 각 스레드들은 스택 영역 외 주소 공간을 공유한다.
+<img src="images_hanah/single-multi-address-space.png" style="width:700px">
+
+- 하나의 프로세스 내에 존재하는 각 스레드들은 스택 영역 외 주소 공간을 공유한다.
 
 ### 힙과 스택의 관계 (JAVA)
-![](images_hanah/heap-stack.png)
+<img src="images_hanah/heap-stack.png" style="width:700px">
 - Stack 영역은 생성과 동시에 크기가 정해진다. 즉, 크기가 한 번 정해지면 바뀌지 않기 때문에, Heap 영역과 상관 없이 크기의 제한을 갖는다.
 - Stack 영역에 등장하는 각각의 변수들은 Heap 영역에 위치한 실제 Object의 참조를 갖고 있는 것을 볼 수 있다. 즉, 실제 객체는 Heap 영역에서 관리되기 때문에 Stack 영역의 크기는 생각보다 클 필요가 없다는 것을 알 수 있다.
 
