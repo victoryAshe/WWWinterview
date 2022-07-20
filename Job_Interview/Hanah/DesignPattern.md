@@ -73,3 +73,76 @@ setter 메소드를 이용하여, 이러한 구현체를 동적으로 지정할�
 - 관련 코드 구현 : https://github.com/HanaHww2/head-first-design-pattern/tree/main/src/me/study/ch1 (출처: 헤드 퍼스트 디자인 패턴)
 
 #### 과거 작성한 코드에서 스트래티지 패턴을 적용해서 수정할 부분...
+
+# Template/Callback Pattern
+- 스프링에서 자주 활용되는 **전략 패턴**의 변형 패턴이라고 할 수 있다.
+- 이 패턴에서 콜백은 주로 **`단일 메소드 인터페이스`** 를 사용하며, 이를 구현할 때, **`익명 내부 클래스`** 로 만든다.
+  - 콜백이 내부 클래스로 선언되므로, 자신을 생성한 클라이언트 메소드 내의 정보를 직접 참조할 수 있다.
+  - 클라이언트와 콜백이 강하게 결합된다. 
+- 메소드 단위로 사용할 오브젝트를 전달받는 마이크로 DI를 이용한다.
+
+### 클라이언트
+- 템플릿 안에서 실행될 로직을 담은 콜백 오브젝트 생성한다.
+- 콜백이 참조할 정보를 제공한다.
+- 템플릿 메소드를 호출하며 콜백을 파라미터로 전달한다. (메소드 레벨의 마이크로 DI)
+### 템플릿
+- 정해진 작업 흐름을 따라 내부에서 생성한 참조 정보를 가지고 콜백 오브젝트 메소드를 호출한다.
+- 콜백으로부터 결과를 돌려받으면 작업을 마저 수행한다.
+### 콜백 
+- 클라이언트 메소드에 있는 정보와 템플릿이 제공한 참조 정보를 이용해 작업을 수행하고 그 결과를 템플릿에 반환한다. 
+
+## Callback 콜백이란?
+- 실행되는 것을 목적으로 다른 오브젝트 메소드에 전돨되는 오브젝트를 말한다.
+- 파라미터로 전달되나, 특정 로직을 담은 메소드를 실행시키기 위해서 사용한다.
+- 자바에서는 매개변수로 메소드 자체를 전달할 방법이 없으므로, 메소드가 담긴 오브젝트를 전달해야 하며, 이를 펑셔널 오브젝트(functional object)라고 한다.
+# 템플릿 메소드 패턴 (template method pattern)
+
+스프링에서 애용되는 디자인 패턴이다.
+
+**제어의 역전**이라는 개념을 활용해 문제를 해결하는 디자인 패턴이라고 볼 수 있다. 제어권을  상위 템플릿 메소드에 넘기고, 자신(하위 구현 클래스)은 필요할 때 호출되어 사용되는 방식 때문이다.
+
+상속을 통해 슈퍼 클래스의 기능을 확장할 때 사용하는 가장 대표적인 방법이다. 변하지 않는 기능은 슈퍼 클래스에 만들어 두고 자주 변경되며 확장할 기능은 서브 클래스에서 만들도록 한다.
+
+- 추상 메소드 또는 오버라이드 가능한 메소드를 정의해두고, 이러한 메소드를 활용해 코드의 기본 알고리즘 골격을 담고 있는 템플릿 메소드를 만든다.
+- 서브 클래스에서는 추상 메소드를 구현하거나 훅 메소드를 오버라이드하는 방법을 이용해 기능의 일부를 확장한다.
+    - 슈퍼 클래스에서 디폴트 기능을 정의해두거나 비워뒀다가, 서브 클래스에서 선택적으로 오버라이드할 수 있도록 만들어 둔 메소드를 훅(hook) 메소드라고 한다.
+
+```java
+// 슈퍼 클래스
+public abstract class AbstractUserDao {
+	public  void add(User user) throws ClassNotFoundException, SQLException {
+		Connectionc = getConnection(); // 추상 메소드를 활용한 템플릿 메소드
+		PreparedStatement ps = c.prepareStatement(
+        // 생략
+        ps.close();
+        c.close();
+    }
+	public User get(String id) throws ClassNotFoundException, SQLException {
+		Connectionc = getConnection();
+		PreparedStatement ps = c.prepareStatement(
+	         
+        // 생략
+        rs.close();
+        ps.close();
+        c.close();
+		return user;
+    }
+
+	// 추상메소드
+	public abstractConnectiongetConnection()throwsClassNotFoundException, SQLException;
+}
+
+// 구현 서브 클래스
+public class SubUserDao extends UserDao {
+		// 서브 클래스에서 추상 메소드를 구현해 기능을 확장한다. 템플릿 메소드 패턴 활용
+    @Override
+    public Connection getConnection() throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver"); // ClassNotFoundException
+        Connection c = DriverManager.getConnection( // SQLException
+                "jdbc:mysql://localhost/toby", "id", "pw");
+        return c;
+    }
+}
+// 서브 클래스는 Connection interface를 구현한 오브젝트를 생성한다. 팩토리 메소드 패턴 활용.
+```
+---
